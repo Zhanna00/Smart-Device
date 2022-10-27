@@ -1,0 +1,24 @@
+.contacts {
+  list-style: none;
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    background-color: $color-sky-blue;
+  }
+
+  &--mailto::before {
+    @include mask("mailto");
+  }
+
+  &--tel::before {
+    @include mask("tel");
+  }
+}

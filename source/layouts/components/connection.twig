@@ -1,0 +1,13 @@
+<section class="connection {{ bemMix }}">
+	{% if isHeading %}
+		<h2 class="heading">{{ connectionHeading }}</h2>
+	{% endif %}
+	<ul class="connection__list">
+		{% for connection in connections %}
+			<li class="connection__item">
+				<a class="connection__link" href="{{ connection.id }}{{ connection.value }}">
+					{{ connection.title ?? connection.value }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>

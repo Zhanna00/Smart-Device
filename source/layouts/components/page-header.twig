@@ -1,10 +1,11 @@
 <header class="page-header">
+	<div class="container">
+		{% include 'logo.twig' with { bemMix: 'page-header__logo', isHeading: true } %}
 
-	{% set mix = 'page-header__logo' %}
-	{% include 'logo.twig' %}
+		{% include 'contacts.twig' with { bemMix: 'page-header__contacts' } %}
 
-	{% set mix = 'page-header__nav' %}
-	{% include 'nav.twig' %}
-
-	<a class="button-link" href="#!">Заказать звонок</a>
+		<a class="page-header__button button button--secondary" href="{{ callBack.url }}">
+			{{ callBack.title }}
+		</a>
+	</div>
 </header>

@@ -1,5 +1,11 @@
-<a class="logo {{ mix }}" href="index.html" {{ page == 'index' ? 'aria-current="page"' }} aria-label="На главную.">
-  <svg class="logo__image" role="img" aria-label="Логотип Smart Device." width="55" height="55" focusable="false">
-    <use xlink:href="img/logo.svg#logo"/>
-  </svg>
-</a>
+<div class="logo {{ bemMix }}">
+ 	<img class="logo__image" src="img/svg/logo.svg" alt="Логотип {{ projectName}}." width="55" height="55">
+
+ 	{% if isHeading %}
+ 		<h1 class="logo__title">{{ projectName }}</h1>
+ 	{% else %}
+ 		<b class="logo__title">{{ projectName }}</b>
+ 	{% endif %}
+
+ 	<p class="logo__description">{{ slogan }}</p>
+ </div>
