@@ -1,1 +1,10 @@
-<header class="page-header"></header>
+<header class="page-header">
+
+	{% set mix = 'page-header__logo' %}
+	{% include 'logo.twig' %}
+
+	{% set mix = 'page-header__nav' %}
+	{% include 'nav.twig' %}
+
+	<a class="button-link" href="#!">Заказать звонок</a>
+</header>

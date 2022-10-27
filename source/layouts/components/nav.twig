@@ -1,0 +1,11 @@
+<nav class="nav {{ mix }}">
+	<ul class="nav__list">
+		{% for link in menu.list %}
+			<li class="nav__item">
+				<a class="nav__link" href="{{ link.href }}">
+					{{ link.title }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</nav>
