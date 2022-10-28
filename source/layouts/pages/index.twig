@@ -1,5 +1,9 @@
 {% extends '../common/layout.twig' %}
 
 {% block main %}
-	<main></main>
+	<main class="page-main">
+    {% include '../components/promo.twig' with { bemMix: 'page-main__promo' } %}
+
+		{% include '../components/advantages.twig' %}
+  </main>
 {% endblock %}
