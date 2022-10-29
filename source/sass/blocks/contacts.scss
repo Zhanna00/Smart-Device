@@ -8,6 +8,7 @@
 .contacts__link {
   display: flex;
   align-items: center;
+  font-family: $ff-mono;
 
   &::before {
     content: "";

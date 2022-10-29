@@ -1,0 +1,15 @@
+<section class="services {{ bemMix }}">
+	{% if isHeading %}
+		<h2 class="services__heading">{{ servicesHeading }}</h2>
+	{% endif %}
+
+	<ul class="services {{ bemMix }}">
+		{% for service in services %}
+			<li class="services__item">
+				<a class="services__link services__link--{{ service.id }}" href="#!">
+					{{ services.title }}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</section>

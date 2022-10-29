@@ -2,8 +2,10 @@
 
 {% block main %}
 	<main class="page-main">
-    {% include '../components/promo.twig' with { bemMix: 'page-main__promo' } %}
+		{% include '../components/main-header.twig' with promo %}
 
 		{% include '../components/advantages.twig' %}
+
+		{% include '../components/company.twig' with { bemMix: 'page-main__company', isHeading: true } %}
   </main>
 {% endblock %}

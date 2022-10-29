@@ -1,8 +1,7 @@
 import gulp from 'gulp';
 import imagemin from 'gulp-imagemin';
-import rename from 'gulp-rename';
-import stackSprite from 'gulp-svg-sprite';
 import webp from 'gulp-webp';
+import { stacksvg } from 'gulp-stacksvg';
 
 const svgo = () =>
   gulp
@@ -23,15 +22,16 @@ const svgo = () =>
 const sprite = () =>
   gulp
     .src('source/img/sprite/*.svg')
-    .pipe(stackSprite({ mode: { stack: true } }))
-    .pipe(rename('sprite_auto.svg'))
+    .pipe(stacksvg({ output: 'sprite_auto' }))
     .pipe(gulp.dest('build/img'));
 
 /*
   Optional tasks
   ---------------------------------
+
   Используйте отличное от дефолтного значение root, если нужно обработать отдельную папку в img,
   а не все изображения в img во всех папках.
+
   root = '' - по дефолту webp добавляются и обновляются во всех папках в source/img/
   root = 'content/' - webp добавляются и обновляются только в source/img/content/
 */
