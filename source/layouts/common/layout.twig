@@ -12,16 +12,18 @@
 	</head>
 
 	<body>
-		{% if contacts %}
-			{% include '../components/page-header.twig' %}
-		{% endif %}
+		<div class="page">
+			{% if contacts %}
+				{% include '../components/page-header.twig' with { bemMix: 'page__header' } %}
+			{% endif %}
 
-		{% block main %}{% endblock %}
+			{% block main %}{% endblock %}
 
-		{% if contacts %}
-			{% include '../components/page-footer.twig' %}
-		{% endif %}
+			{% if contacts %}
+				{% include '../components/page-footer.twig' %}
+			{% endif %}
 
-		{% include 'scripts.twig' %}
+			{% include 'scripts.twig' %}
+		</div>
 	</body>
 </html>

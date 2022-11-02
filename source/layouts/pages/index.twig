@@ -6,6 +6,8 @@
 
 		{% include '../components/advantages.twig' %}
 
-		{% include '../components/company.twig' with { bemMix: 'page-main__company', isHeading: true } %}
-  </main>
+		{% include '../components/company.twig' with company %}
+
+		{% include '../components/catalog.twig' with catalog %}
+	</main>
 {% endblock %}

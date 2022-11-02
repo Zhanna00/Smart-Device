@@ -1,25 +1,27 @@
+.page__header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+}
+
 .page-header {
-  padding: 30px 0;
+  padding: 30px 0 41px;
   color: $color-alice-blue;
   background-image: linear-gradient(to top, transparent, $color-bg 10px);
 }
 
 .page-header__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(210px, 29fr) 50fr 29fr;
+  gap: 75px;
+  align-items: center;
 }
 
 .page-header__button {
-  display: inline-flex;
-  padding: 10px 15px;
-  margin: 10px auto;
-
-  color: $color-alice-blue;
-  border: 1px solid $color-alice-blue;
-  border-radius: 3px;
-  cursor: pointer;
-
-  transition: opacity $trans-default;
-
+  margin-left: 68px;
+  width: 160px;
   // &:disabled {
   //   opacity: 0.5;
 
@@ -29,4 +31,8 @@
   // @include hover-focus {
   //   opacity: 0.8;
   // }
+}
+
+.page-header__logo {
+  align-items: center;
 }

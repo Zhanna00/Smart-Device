@@ -1,13 +1,16 @@
 .logo {
-  display: flex;
+  position: relative;
+  padding-left: 70px;
 }
 
 .logo__image {
-  margin-right: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .logo__title {
-  margin: 0;
+  margin: 4px 0 2px 0;
   font-family: inherit;
   font-weight: 700;
   font-size: 25px;
@@ -15,10 +18,8 @@
 }
 
 .logo__description {
-  position: absolute;
-  left: 113px;
-  top: 60px;
   margin: 0;
+  font-family: $ff-roboto;
   font-weight: 500;
   font-size: 12px;
   line-height: $fz-secondary;

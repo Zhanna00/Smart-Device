@@ -1,0 +1,17 @@
+.catalog {
+  background-color: $color-bg;
+}
+
+.catalog h2 {
+  font-size: 36px;
+  line-height: 51px;
+  color: $color-default-white;
+  margin: 0;
+}
+
+.catalog__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 29px 34px;
+  list-style: none;
+}

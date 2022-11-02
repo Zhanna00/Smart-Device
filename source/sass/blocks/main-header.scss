@@ -1,0 +1,52 @@
+.main-header {
+  position: relative;
+  display: flex;
+  min-height: 880px;
+  padding: 120px 0;
+  color: $color-alice-blue;
+  background-color: $color-bg;
+}
+
+.main-header__container {
+  margin: auto;
+  padding: 24px 40px 0 175px;
+  z-index: 1;
+}
+
+.main-header h2 {
+  margin: 0 0 31px 0;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-family: $ff-roboto_cd;
+}
+
+.main-header p {
+  margin: 0 0 32px 0;
+  font-size: 22px;
+  line-height: 34px;
+  font-family: $ff-mono;
+}
+
+.main-header__image {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.main-header__button {
+  display: table;
+  margin-top: 48px;
+  padding: 17px 27px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  background-color: $color-sky-blue;
+}

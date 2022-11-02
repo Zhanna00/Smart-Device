@@ -1,25 +1,10 @@
-<article class="company {{ bemMix }}">
-	{% if isHeading %}
-		<h2 class="company__heading">{{ companyHeading }}</h2>
-	{% endif %}
+<article class="company container">
+	{% include 'picture.twig' with { className: 'company__image', image } %}
 
-	{% set picture = {
-    image: photo.image,
-    alt: photo.imageText,
-    ext: photo.ext,
-		width: photo.width,
-    height: photo.height
-  } %}
-
-	<div class="company__wrapper">
-		{% include 'picture.twig' %}
-	</div>
-
-	{% for company in companies %}
-		<p class="company__description">{{ company.description }}</p>
-
-		<a class="company__button" href="{{ company.id }}:{{ company.value }}">
-			{{ company.text }}
+	<div class="company__container">
+		{{ content }}
+		<a class="company__link button" href="{{ link.url }}">
+			{{ link.title }}
 		</a>
-	{% endfor %}
+	</div>
 </article>

@@ -1,8 +1,14 @@
 .button {
+  padding: 11px 15px;
   font-weight: 700;
   font-size: $fz-secondary;
   line-height: $fz-default;
+  color: $color-alice-blue;
+  border-radius: 3px;
+  border: 1px solid;
+  text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity $trans-default;
 }

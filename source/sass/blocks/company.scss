@@ -1,0 +1,36 @@
+.company {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: $color-bg;
+}
+
+.company__container {
+  position: relative;
+  padding: 0 0 120px 250px;
+}
+
+.company h2 {
+  margin: 0 0 11px 0;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+.company p {
+  margin: 0 0 21px 0;
+  font-size: $fz-default;
+  line-height: 22px;
+  font-family: $ff-mono;
+}
+
+.company__image {
+  position: absolute;
+}
+
+.company__link {
+  margin-top: 39px;
+  padding: 13px 50px;
+  color: $color-sky-blue;
+  border-color: $color-sky-blue;
+}

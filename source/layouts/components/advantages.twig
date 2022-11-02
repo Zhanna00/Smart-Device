@@ -2,8 +2,12 @@
 	<ul class="advantages__list">
 		{% for advantage in advantages %}
 			<li class="advantages__item advantages__item--{{ advantage.icon }}">
-				<span class="advantages__title">{{ advantage.title }}</span>
-				<p class="advantages__description">{{ advantage.description }}</p>
+				<span class="advantages__title">
+					{{ advantage.title }}
+				</span>
+				<p class="advantages__description">
+					{{ advantage.description }}
+				</p>
 			</li>
 		{% endfor %}
 	</ul>

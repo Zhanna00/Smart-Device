@@ -1,9 +1,8 @@
-<section class="nav {{ bemMix }}">
-	{% if isHeading %}
-		<h2 class="nav__heading">{{ navHeading }}</h2>
-	{% endif %}
+<div class="nav {{ bemMix }}">
+	{{ content }}
+
 	<ul class="nav__list">
-		{% for nav in menu.list %}
+		{% for nav in menu %}
 			<li class="nav__item">
 				<a class="nav__link" href="#!">
 					{{ nav.title }}
@@ -11,4 +10,5 @@
 			</li>
 		{% endfor %}
 	</ul>
-</section>
+
+</div>

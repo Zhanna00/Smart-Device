@@ -1,5 +1,11 @@
 <section class="main-header">
-	{{ content }}
-
 	{% include 'picture.twig' with { className: 'main-header__image', image } %}
+
+	<div class="main-header__container container">
+		{{ content }}
+
+		<a class="main-header__button" href="{{ link.url }}">
+			{{ link.title }}
+		</a>
+	</div>
 </section>
