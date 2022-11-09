@@ -1,7 +1,7 @@
-import gulp from 'gulp';
+import beautify from 'gulp-html-beautify';
 import createHtml from 'gulp-twig';
 import getData from 'gulp-data';
-import prettier from 'gulp-prettier';
+import gulp from 'gulp';
 import processHtml from 'gulp-posthtml';
 import useCondition from 'gulp-if';
 import validateBem from 'gulp-html-bemlinter';
@@ -9,11 +9,16 @@ import validateBem from 'gulp-html-bemlinter';
 const isDev = process.env.NODE_ENV === 'development';
 const lintMode = Boolean(process.env.LINT);
 
+const SOURCES = ['source/layouts/pages/**/*.twig'];
+if (!isDev) {
+  SOURCES.push('!source/layouts/pages/**/*-dev.twig');
+}
+
 const compileLayouts = () =>
   gulp
-    .src('source/layouts/pages/**/*.twig')
+    .src(SOURCES)
     .pipe(
-      getData(async ({ path }) => {
+      getData(async ({path}) => {
         const page = path
           .replace(/^.*pages(\\+|\/+)(.*)\.twig$/, '$2')
           .replace(/\\/g, '/');
@@ -38,14 +43,25 @@ const compileLayouts = () =>
           ...pageData.default,
           isDev,
           page,
-          version: isDev ? `?${versionId}` : ''
+          version: isDev ? `?${versionId}` : '',
         };
       })
     )
-    .pipe(createHtml())
+    .pipe(
+      createHtml({
+        functions: [
+          {
+            name: 'contains',
+            func(str, pattern) {
+              return str.includes(pattern);
+            },
+          },
+        ],
+      })
+    )
     .pipe(processHtml())
     .pipe(validateBem())
-    .pipe(useCondition(!lintMode, prettier()))
+    .pipe(useCondition(!lintMode, beautify()))
     .pipe(useCondition(!lintMode, gulp.dest('build')));
 
 export default compileLayouts;
