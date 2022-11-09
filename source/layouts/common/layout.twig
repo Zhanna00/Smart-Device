@@ -12,17 +12,18 @@
 	</head>
 
 	<body>
-		<div class="page">
-			{% if contacts %}
+		<div class="page {{ pageModifier }}">
+			{% if page != 'sitemap' %}
 				{% include '../components/page-header.twig' with { bemMix: 'page__header' } %}
 			{% endif %}
 
 			{% block main %}{% endblock %}
 
-			{% if contacts %}
-				{% include '../components/page-footer.twig' %}
+			{% if page != 'sitemap' %}
+				{% include '../components/page-footer.twig' with { bemMix: 'page__footer' } %}
 			{% endif %}
 
+			{% block modal %}{% endblock %}
 			{% include 'scripts.twig' %}
 		</div>
 	</body>

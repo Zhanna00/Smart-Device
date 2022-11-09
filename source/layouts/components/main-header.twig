@@ -5,7 +5,8 @@
 		{{ content }}
 
 		<a class="main-header__button" href="{{ link.url }}">
-			{{ link.title }}
+			<span class="mobile-hide">{{ link.title }}</span>
+			<span class="mobile-show">{{ link.mobileTitle }}</span>
 		</a>
 	</div>
 </section>

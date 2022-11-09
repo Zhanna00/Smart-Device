@@ -1,13 +1,19 @@
 {% extends '../common/layout.twig' %}
 
 {% block main %}
-	<main class="page-main">
+	<main class="page__main">
 		{% include '../components/main-header.twig' with promo %}
 
-		{% include '../components/advantages.twig' %}
+		{% include '../components/advantages.twig' with { bemMix: 'advantages__list--grid' }%}
 
 		{% include '../components/company.twig' with company %}
 
 		{% include '../components/catalog.twig' with catalog %}
+
+		{% include '../components/content-section.twig' with feedback|merge({ bemMix: 'content-section--form' }) %}
 	</main>
+{% endblock %}
+
+{% block modal %}
+	{% include '../components/modal.twig' with { component: 'content-section', data: callback } %}
 {% endblock %}

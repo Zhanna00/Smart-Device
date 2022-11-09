@@ -1,0 +1,14 @@
+<section class="content-section {{ bemMix }}" {{ id ? 'id="' ~ id ~ '"' }} data-content-section>
+
+	<div class="content-section__inner container">
+		{% if image %}
+			<div class="content-section__image">
+				{% include 'picture.twig' with { image } %}
+			</div>
+		{% endif %}
+
+		<div class="content-section__body">
+			{{ content }}
+		</div>
+	</div>
+</section>
