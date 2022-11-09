@@ -1,36 +1,50 @@
-.company {
+.company-content {
   position: relative;
   display: flex;
   flex-direction: column;
   color: $color-bg;
+
+  @include vp-1023 {
+    padding-left: 45px;
+  }
 }
 
-.company__container {
+.company-content__container {
   position: relative;
-  padding: 0 0 120px 250px;
+  padding: 0 0 122px 250px;
+
+  @include vp-1023 {
+    padding: 0 0 80px 180px;
+    margin-top: -5px; // Pixelperfect
+  }
 }
 
-.company h2 {
-  margin: 0 0 11px 0;
+.company-content h2 {
+  margin: 0 0 12px 0;
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
 }
 
-.company p {
-  margin: 0 0 21px 0;
+.company-content p {
+  margin: 0 0 20px 0;
   font-size: $fz-default;
   line-height: 22px;
   font-family: $ff-mono;
 }
 
-.company__image {
+.company-content__image {
   position: absolute;
 }
 
-.company__link {
-  margin-top: 39px;
+.company-content__link {
+  display: inline-block;
+  margin-top: 19px;
   padding: 13px 50px;
-  color: $color-sky-blue;
-  border-color: $color-sky-blue;
+  color: $color-deep-sky-blue;
+  border-color: $color-deep-sky-blue;
+
+  @include vp-1023 {
+    margin-top: -4px; // Pixelperfect
+  }
 }

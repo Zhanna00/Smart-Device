@@ -1,0 +1,13 @@
+.mobile-show {
+  display: none;
+
+  @include vp-767 {
+    display: inline;
+  }
+}
+
+@include vp-767 {
+  .mobile-hide {
+    display: none;
+  }
+}

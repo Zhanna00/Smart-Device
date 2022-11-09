@@ -1,0 +1,41 @@
+.nav h2 {
+  margin: 5px 0 22px 0;
+  font-family: $ff-roboto_cd;
+  font-size: 15px;
+  line-height: $fz-default;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-default-white;
+
+  @include vp-1023 {
+    margin-top: 7px;
+  }
+}
+
+.nav__toggler {
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  opacity: 0.7;
+}
+
+.nav__item {
+  font-family: $ff-mono;
+  font-size: 16px;
+  line-height: 22px;
+  margin-bottom: 8px;
+  break-inside: avoid-column;
+
+  &:last-child {
+    margin-bottom: 32px;
+
+    @include vp-1023 {
+      margin-bottom: 0;
+    }
+  }
+}

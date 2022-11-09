@@ -1,0 +1,35 @@
+.socials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 4px 0 0 15px; // Pixelperfect
+  padding: 0;
+  list-style: none;
+
+  @include vp-1023 {
+    margin: 0;
+  }
+}
+
+.socials__link {
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: $color-alice-blue-2;
+    border-radius: 50%;
+  }
+
+  &--classmates::before {
+    @include mask("classmates");
+  }
+
+  &--vk::before {
+    @include mask("vk");
+  }
+
+  &--pinterest::before {
+    background-image: url("../img/sprite_auto.svg#pinterest");
+  }
+}

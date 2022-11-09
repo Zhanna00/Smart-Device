@@ -1,0 +1,180 @@
+.content-section--form {
+  position: relative;
+  padding: 165px 0 235px;
+  color: $color-default-white;
+  background-color: $color-deep-sky-blue-3;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    width: calc(50% + 10px);
+    background-color: $color-bg-50;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  @include vp-1023 {
+    padding: 44px 0 124px;
+  }
+}
+
+.content-section__inner {
+  position: relative;
+  display: flex;
+}
+
+.content-section__inner:not(.content-section__inner--closable) {
+  align-items: center;
+}
+
+.content-section form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 30px;
+  margin: 35px 10px 0 5px;
+  font-family: $ff-mono;
+
+  @include vp-1023 {
+    margin: 25px 0 0 0;
+  }
+}
+
+.content-section__body h2 {
+  margin: 0 0 12px;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 50px;
+
+  @include vp-1023 {
+    margin: 0 0 8px;
+  }
+}
+
+.content-section__body p {
+  font-size: $fz-default;
+  line-height: 22px;
+  font-family: $ff-mono;
+  margin: 0;
+  margin-left: 4px; // Pixelperfect
+
+  @include vp-1023 {
+    margin-left: 0;
+  }
+}
+
+.content-section form button {
+  font-family: $ff-roboto_cd;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  background-color: $color-bg;
+  border-radius: 3px;
+  color: inherit;
+  align-self: start;
+  margin-right: 10px;
+  padding: 15px 20px 11px;
+
+  @include vp-1023 {
+    margin-right: 55px;
+  }
+}
+
+.content-section form input:not([type="checkbox"]),
+.content-section form textarea {
+  width: 100%;
+  font-family: $ff-mono;
+  color: inherit;
+  padding: 15px;
+  border: none;
+  background-color: $color-bg-15;
+  border-radius: 3px;
+}
+
+.content-section form textarea {
+  grid-column: 1/-1;
+  padding: 24px 14px;
+  min-height: 155px;
+  margin-bottom: 15px;
+
+  @include vp-1023 {
+    padding-top: 31px;
+    margin-bottom: 13px;
+  }
+}
+
+.content-section form label {
+  display: flex;
+  align-items: center;
+  padding: 14px 10px;
+  font-size: $fz-secondary;
+  line-height: $fz-default;
+  font-family: $ff-mono;
+  color: $color-white-80;
+  cursor: pointer;
+
+  @include vp-1023 {
+    padding: 0;
+    margin-top: 4px; // Pixelperfect
+  }
+}
+
+.content-section form label [type="checkbox"] {
+  margin: -4px 11px 0 0;
+  font-family: inherit;
+}
+
+.content-section form [type="checkbox"] {
+  appearance: none;
+  position: relative;
+  width: 22px;
+  height: 15px;
+  color: $color-default-white;
+  border: 1px solid $color-default-white;
+  border-radius: 2px;
+
+  @include vp-1023 {
+    width: 18px;
+  }
+}
+
+.content-section form [type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 6px;
+  height: 3px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  transform: rotate(-45deg);
+}
+
+.content-section--form,
+.content-section__body {
+  padding-left: 10px;
+
+  @include vp-1023 {
+    padding-left: 0;
+  }
+}
+
+.content-section__image {
+  flex-shrink: 0;
+  max-width: 43%;
+  margin-right: 104px;
+  margin-top: 4px;
+  margin-left: -9px;
+
+  @include vp-1023 {
+    display: none;
+  }
+}

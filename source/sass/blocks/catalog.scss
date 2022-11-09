@@ -1,17 +1,82 @@
 .catalog {
   background-color: $color-bg;
+  padding: 65px 0 124px 0;
+
+  @include vp-1023 {
+    padding: 56px 0 60px 0;
+  }
 }
 
 .catalog h2 {
+  font-weight: 400;
   font-size: 36px;
   line-height: 51px;
   color: $color-default-white;
-  margin: 0;
+  margin: 0 auto;
+  font-family: $ff-roboto_cd;
 }
 
 .catalog__list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 29px 34px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 85px;
   list-style: none;
+  margin-top: 54px;
+
+  @include vp-1023 {
+    margin-top: 38px;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.catalog__link {
+  position: relative;
+  color: $color-default-white;
+  z-index: 1;
+  display: block;
+  min-height: 650px;
+  padding: 48px 40px 100px;
+  transition: opacity 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: 1px; // Pixelperfect
+    bottom: 0;
+    width: 60px;
+    height: 60px;
+    background-color: $color-deep-sky-blue;
+    background-image: url("../img/sprite_auto.svg#arrow-right");
+    background-repeat: no-repeat;
+    background-position: 54%; // Pixelperfect
+    background-size: 5px;
+    border-radius: 3px 0 0 0;
+  }
+
+  @include vp-1023 {
+    min-height: 250px;
+    padding: 37px 44px 100px;
+  }
+}
+
+.catalog__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.catalog__text {
+  margin: 0;
+  max-width: 190px;
+  font-size: 20px;
+  line-height: 30px;
+
+  @include vp-1023 {
+    max-width: 150px;
+  }
 }
