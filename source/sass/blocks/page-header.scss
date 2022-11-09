@@ -72,6 +72,11 @@
 
 .page-header__contacts {
   @include vp-1023 {
+    justify-content: end;
+    transform: translate(-9px, -5px);
+  }
+
+  @include vp-767 {
     transform: translate(0, -3px);
   }
 }

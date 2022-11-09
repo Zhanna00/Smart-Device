@@ -14,8 +14,7 @@
   position: relative;
   padding: 40px 40px 46px 45px;
   border: 1px solid $color-light-whisper;
-  transition: color 0.3s ease, background-color 0.3s ease,
-    border-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 
   &::after {
     content: "";
@@ -57,12 +56,6 @@
     @include mask("tag");
   }
 
-  // &:hover {
-  //   border-color: transparent;
-  //   color: $color-alice-blue;
-  //   background-color: $color-deep-sky-blue;
-  // }
-
   @include vp-1023 {
     padding-left: 43px;
     padding-right: 43px;
@@ -73,16 +66,15 @@
     padding: 30px;
   }
 
-  &:hover,
-  &:hover:not(.focus-visible) {
-    color: &color-alice-blue;
-    background-color: &color-deep-sky-blue;
-    border-color: transparent;
+  // &:hover {
+  //   color: &color-alice-blue;
+  //   background-color: &color-deep-sky-blue;
+  //   border-color: transparent;
 
-      &::before {
-        background-color: currentColor;
-      }
-  }
+  //   &::before {
+  //     background-color: currentColor;
+  //   }
+  // }
 }
 
 .advantages__item h3 {
