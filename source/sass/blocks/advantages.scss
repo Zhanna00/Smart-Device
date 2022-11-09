@@ -66,15 +66,15 @@
     padding: 30px;
   }
 
-  // &:hover {
-  //   color: &color-alice-blue;
-  //   background-color: &color-deep-sky-blue;
-  //   border-color: transparent;
+  &:hover {
+    color: &color-alice-blue;
+    background-color: &color-deep-sky-blue;
+    border-color: transparent;
 
-  //   &::before {
-  //     background-color: currentColor;
-  //   }
-  // }
+    &::before {
+      background-color: currentColor;
+    }
+  }
 }
 
 .advantages__item h3 {
