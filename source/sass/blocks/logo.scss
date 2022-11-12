@@ -1,6 +1,10 @@
 .logo {
   position: relative;
   padding: 4px 0 0 70px;
+
+  // &[href] {
+  //   @include default-interactive;
+  // }
 }
 
 .logo__image {
@@ -10,6 +14,7 @@
 }
 
 .logo__title {
+  display: block;
   margin: 1px 0;
   font-family: inherit;
   font-weight: 700;
@@ -26,9 +31,18 @@
   color: $color-white-70;
 }
 
-.logo__title,
-.logo__description {
+.logo--headable {
   @include vp-767 {
-    display: none;
+    padding: 0;
+
+    .logo__title,
+    .logo__description {
+      display: none;
+    }
+
+    .logo__image {
+      position: static;
+      width: 35px;
+    }
   }
 }

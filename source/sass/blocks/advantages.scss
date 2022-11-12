@@ -1,20 +1,38 @@
 .advantages {
-  padding: 120px 50px 118px 50px;
+  margin: 120px auto;
 
   @include vp-1023 {
-    padding: 80px 50px 36px 50px;
+    margin: 80px auto;
   }
 
   @include vp-767 {
-    padding-top: 49px;
+    margin: 50px auto 48px auto;
+  }
+}
+
+.advantages__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 33px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1023 {
+    gap: 30px 31px;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
   }
 }
 
 .advantages__item {
   position: relative;
+  min-height: 300px;
   padding: 40px 40px 46px 45px;
   border: 1px solid $color-light-whisper;
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color $trans-default, background-color $trans-default, border-color $trans-default;
 
   &::after {
     content: "";
@@ -57,22 +75,32 @@
   }
 
   @include vp-1023 {
-    padding-left: 43px;
+    min-height: 360px;
     padding-right: 43px;
+    padding-bottom: 30px;
+    padding-left: 43px;
   }
 
   @include vp-767 {
-    min-height: 340px;
+    min-height: 342px;
     padding: 30px;
+
+    &:nth-child(n + 3) {
+      min-height: 325px;
+    }
   }
 
   &:hover {
-    color: &color-alice-blue;
-    background-color: &color-deep-sky-blue;
+    color: $color-alice-blue;
+    background-color: $color-deep-sky-blue;
     border-color: transparent;
 
     &::before {
-      background-color: currentColor;
+      background-color: $color-alice-blue;
+    }
+
+    h3 {
+      color: $color-alice-blue;
     }
   }
 }
@@ -83,12 +111,7 @@
   font-size: 24px;
   line-height: 34px;
   color: $color-deep-sky-blue;
-  transition: color 0.3s ease;
-}
-
-.advantages__item h3:last-child {
-  font-size: 24px;
-  line-height: 35px;
+  transition: inherit;
 
   @include vp-767 {
     font-size: 20px;
@@ -97,7 +120,7 @@
 }
 
 .advantages__item p {
-  margin-top: 12px;
+  margin: 12px 0 0;
   font-family: $ff-mono;
   font-size: $fz-default;
   line-height: 22px;
@@ -109,36 +132,5 @@
   @include vp-767 {
     font-size: 14px;
     line-height: 19px;
-  }
-}
-
-.advantages__item p:last-child {
-  min-height: 97px;
-}
-
-.advantages__list {
-  margin: 0;
-  padding: 0;
-}
-
-.advantages__list--grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px 32px;
-  list-style: none;
-
-  @include vp-767 {
-    grid-template-columns: 1fr;
-  }
-}
-
-.advantages__item--grid {
-  min-height: 100%;
-}
-
-.advantages__list--grid li:nth-child(n + 3),
-.advantages__item--grid {
-  @include vp-767 {
-    min-height: 325px;
   }
 }

@@ -1,4 +1,4 @@
-.company-content {
+.company {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,9 +7,13 @@
   @include vp-1023 {
     padding-left: 45px;
   }
+
+  @include vp-767 {
+    margin-bottom: 81px;
+  }
 }
 
-.company-content__container {
+.company__container {
   position: relative;
   padding: 0 0 122px 250px;
 
@@ -17,27 +21,46 @@
     padding: 0 0 80px 180px;
     margin-top: -5px; // Pixelperfect
   }
+
+  @include vp-767 {
+    padding: 0;
+  }
 }
 
-.company-content h2 {
+.company h2 {
   margin: 0 0 12px 0;
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
+
+  @include vp-767 {
+    font-size: 28px;
+    line-height: 39px;
+  }
 }
 
-.company-content p {
+.company p {
   margin: 0 0 20px 0;
   font-size: $fz-default;
   line-height: 22px;
   font-family: $ff-mono;
+
+  @include vp-767 {
+    margin: 0 0 18px; // Pixelperfect
+    font-size: 14px;
+    line-height: 19px;
+  }
 }
 
-.company-content__image {
+.company__image {
   position: absolute;
+
+  @include vp-767 {
+    display: none;
+  }
 }
 
-.company-content__link {
+.company__link {
   display: inline-block;
   margin-top: 19px;
   padding: 13px 50px;
@@ -46,5 +69,9 @@
 
   @include vp-1023 {
     margin-top: -4px; // Pixelperfect
+  }
+
+  @include vp-767 {
+    padding: 8px 39px;
   }
 }

@@ -125,7 +125,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        ignoreAtRules: ['mixin', 'define-mixin', 'include', 'content', 'rules', 'each'],
+        ignoreAtRules: ['mixin', 'define-mixin', 'if', 'include', 'content', 'rules', 'each'],
       },
     ],
     'at-rule-no-vendor-prefix': true,

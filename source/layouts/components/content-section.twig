@@ -9,6 +9,10 @@
 
 		<div class="content-section__body">
 			{{ content }}
+
+			{% if form %}
+				{% include 'form.twig' with form|merge({ bemMix: 'content-section__form' }) %}
+			{% endif %}
 		</div>
 	</div>
 </section>

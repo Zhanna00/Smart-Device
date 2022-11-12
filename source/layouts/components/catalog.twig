@@ -1,5 +1,8 @@
 <section class="catalog">
-	<h2 class="catalog__heading container">{{ heading }}</h2>
+	<h2 class="catalog__heading container">
+		<span class="mobile-hide">{{ title }}</span>
+		<span class="mobile-show">{{ mobileTitle }}</span>
+	</h2>
 
 	<ul class="catalog__list container">
 		{% for item in list %}

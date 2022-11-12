@@ -1,9 +1,9 @@
-<article class="company-content container">
-	{% include 'picture.twig' with { className: 'company-content__image', image } %}
+<article class="company container">
+	{% include 'picture.twig' with { className: 'company__image', image } %}
 
-	<div class="company-content__container">
+	<div class="company__container">
 		{{ content }}
-		<a class="company-content__link button" href="{{ link.url }}">
+		<a class="company__link button" href="{{ link.url }}" id="btn" onclick="readMore()">
 			{{ link.title }}
 		</a>
 	</div>

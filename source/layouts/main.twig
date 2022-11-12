@@ -13,18 +13,20 @@
 
 	<body>
 		<div class="page {{ pageModifier }}">
-			{% if page != 'sitemap' %}
-				{% include '../components/page-header.twig' with { bemMix: 'page__header' } %}
-			{% endif %}
+			{% block header %}
+				{% include 'components/page-header.twig' with { bemMix: 'page__header' } %}
+			{% endblock %}
 
-			{% block main %}{% endblock %}
+			<main class="page__main page-main">
+				{% block main %}{% endblock %}
+			</main>
 
-			{% if page != 'sitemap' %}
-				{% include '../components/page-footer.twig' with { bemMix: 'page__footer' } %}
-			{% endif %}
+			{% block footer %}
+				{% include 'components/page-footer.twig' with { bemMix: 'page__footer' } %}
+			{% endblock %}
 
 			{% block modal %}{% endblock %}
-			{% include 'scripts.twig' %}
+			{% include 'modules/scripts.twig' %}
 		</div>
 	</body>
 </html>

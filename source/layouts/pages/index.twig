@@ -1,17 +1,15 @@
-{% extends '../common/layout.twig' %}
+{% extends '../main.twig' %}
 
 {% block main %}
-	<main class="page__main">
-		{% include '../components/main-header.twig' with promo %}
+		{% include '../components/main-header.twig' with promo|merge({ bemMix: 'page-main__header' }) %}
 
-		{% include '../components/advantages.twig' with { bemMix: 'advantages__list--grid' }%}
+	{% include '../components/advantages.twig' %}
 
-		{% include '../components/company.twig' with company %}
+	{% include '../components/company.twig' with company %}
 
-		{% include '../components/catalog.twig' with catalog %}
+	{% include '../components/catalog.twig' with catalog %}
 
-		{% include '../components/content-section.twig' with feedback|merge({ bemMix: 'content-section--form' }) %}
-	</main>
+	{% include '../components/content-section.twig' with feedback|merge({ bemMix: 'content-section--form' }) %}
 {% endblock %}
 
 {% block modal %}

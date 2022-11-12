@@ -1,36 +1,49 @@
-import html from '../js/utils/html.js';
-
-export const getFormContent = (id, buttonText = 'Отправить') => html`<form
-  action="https://echo.htmlacademy.ru"
->
-  <input id="${id}-name" name="name" type="text" placeholder="Имя" required />
-  <label class="visually-hidden" for="${id}-name">Имя</label>
-
-  <input
-    id="${id}-phone"
-    name="phone"
-    type="tel"
-    placeholder="Телефон"
-    required
-  />
-  <label class="visually-hidden" for="${id}-phone">Телефон</label>
-
-  <textarea
-    id="${id}-comment"
-    name="comment"
-    placeholder="Ваш вопрос"
-  ></textarea>
-  <label class="visually-hidden" for="${id}-comment">Ваш вопрос</label>
-
-  <button type="submit">${buttonText}</button>
-
-  <label>
-    <input name="agreement" type="checkbox" checked required />
-    Я согласен на обработку персональных данных
-  </label>
-</form>`;
+import html from '../../js/utils/html.js';
+import getFormData from '../modules/form.js';
 
 export default {
+  company: {
+    content: html`<h2>О компании</h2>
+      <p>
+        Мы поставляем электронные комплектующие, производим печатные платы и
+        предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и
+        пилотные образцы до 10 дней.
+      </p>
+      <p>
+        Наши поставщики - мировые производители электронных компонентов: OSRAM,
+        CREE, HOLGLITRONIC, REFOND.
+        <span class="mobile-hide">
+          Печатные платы и комплектующие Service Devices применяются на
+          предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ,
+          АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие
+          Производители светотехники России.
+        </span>
+      </p>
+      <span id="dots">.</span>
+      <div class="more-hide" id="more">
+        <p>
+          Smart Device - это команда профессионалов. Через нас прошло более 1
+          000 000 клиентов, 70% из которых продолжают сотрудничество по сей
+          день. На данный момент насчитывается более 14 офисов по всей стране и
+          20 городов присутствия.
+        </p>
+        <p>
+          Мы стремимся к постоянному развитию и повышению уровня качества
+          продукции, производимой внутри компании. Использование инновационных
+          технологий помогает экономить деньги и время наших клиентов
+        </p>
+      </div>`,
+    image: {
+      default: 'img/company.jpg',
+      default2x: 'img/company@2x.jpg',
+      webp: 'img/company.webp',
+      webp2x: 'img/company@2x.webp',
+    },
+    link: {
+      title: 'Подробнее',
+      url: '#!',
+    },
+  },
   advantages: [
     {
       title: 'Оперативные сроки',
@@ -60,33 +73,44 @@ export default {
       icon: 'tag',
     },
   ],
-  company: {
-    content: html`<h2>О компании</h2>
+  callback: {
+    content: html`<h2>Закажите звонок</h2>
       <p>
-        Мы поставляем электронные комплектующие, производим печатные платы и
-        предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и
-        пилотные образцы до 10 дней.
-      </p>
-      <p>
-        Наши поставщики - мировые производители электронных компонентов: OSRAM,
-        CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service
-        Devices применяются на предприятиях Российских Железных Дорог (РЖД),
-        РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших
-        клиентов крупнейшие Производители светотехники России.
+        Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
       </p>`,
+    form: getFormData('callback'),
+    modalId: 'callback',
+  },
+  feedback: {
+    content: html`<h2>Остались вопросы? Задайте их нам!</h2>
+      <p>Мы проконсультируем Вас бесплатно</p>`,
+    form: getFormData('feedback', 'Задать вопрос'),
+    id: 'feedback',
     image: {
-      default: 'img/company.jpg',
-      default2x: 'img/company@2x.jpg',
-      webp: 'img/company.webp',
-      webp2x: 'img/company@2x.webp',
+      default: 'img/paper-airplane.png',
+      default2x: 'img/paper-airplane@2x.png',
+      webp: 'img/paper-airplane.webp',
+      webp2x: 'img/paper-airplane@2x.webp',
+    },
+  },
+  promo: {
+    content: html`<h2>Печатные платы</h2>
+      <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>`,
+    image: {
+      default: 'img/main-header.jpg',
+      default2x: 'img/main-header@2x.jpg',
+      immediately: true,
+      webp: 'img/main-header.webp',
+      webp2x: 'img/main-header@2x.webp',
     },
     link: {
-      title: 'Подробнее',
-      url: '#!',
+      mobileTitle: 'бесплатная консультация',
+      title: 'Получить бесплатную консультацию',
+      url: '#feedback',
     },
   },
   catalog: {
-    heading: 'Smart Device предлагает следующие товары и услуги',
+    title: 'Smart Device предлагает следующие товары и услуги',
     list: [
       {
         image: {
@@ -149,43 +173,6 @@ export default {
         },
       },
     ],
-  },
-  callback: {
-    content: html`<h2>Закажите звонок</h2>
-      <p>
-        Оставьте контакты, мы проконсультируем вас бесплатно в удобное время
-      </p>
-      ${getFormContent('callback')}`,
-    modalId: 'callback',
-  },
-  feedback: {
-    content: html`<h2>Остались вопросы? Задайте их нам!</h2>
-      <p>Мы проконсультируем Вас бесплатно</p>
-      ${getFormContent('feedback', 'Задать вопрос')}`,
-    id: 'feedback',
-    image: {
-      default: 'img/paper-airplane.png',
-      default2x: 'img/paper-airplane@2x.png',
-      webp: 'img/paper-airplane.webp',
-      webp2x: 'img/paper-airplane@2x.webp',
-    },
-  },
-  promo: {
-    content: html`<h2>Печатные платы</h2>
-      <p>
-        производство и монтаж, поставка комплектующих, блоков и модулей
-      </p>`,
-    image: {
-      default: 'img/main-header.jpg',
-      default2x: 'img/main-header@2x.jpg',
-      immediately: true,
-      webp: 'img/main-header.webp',
-      webp2x: 'img/main-header@2x.webp',
-    },
-    link: {
-      mobileTitle: 'бесплатная консультация',
-      title: 'Получить бесплатную консультацию',
-      url: '#feedback',
-    },
+    mobileTitle: 'Товары и услуги Smart Device',
   },
 };
