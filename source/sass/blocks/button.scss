@@ -4,11 +4,20 @@
   font-size: $fz-secondary;
   line-height: $fz-default;
   color: $color-alice-blue;
+  background-color: transparent;
   border-radius: 3px;
   border: 1px solid;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.05em;
-  cursor: pointer;
   transition: opacity $trans-default;
+  cursor: pointer;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @include default-interactive;
 }

@@ -1,4 +1,4 @@
-.company {
+.company-article {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
   }
 }
 
-.company__container {
+.company-article__container {
   position: relative;
   padding: 0 0 122px 250px;
 
@@ -27,7 +27,7 @@
   }
 }
 
-.company h2 {
+.company-article h2 {
   margin: 0 0 12px 0;
   font-weight: 400;
   font-size: 36px;
@@ -39,7 +39,7 @@
   }
 }
 
-.company p {
+.company-article p {
   margin: 0 0 20px 0;
   font-size: $fz-default;
   line-height: 22px;
@@ -52,7 +52,7 @@
   }
 }
 
-.company__image {
+.company-article__image {
   position: absolute;
 
   @include vp-767 {
@@ -60,7 +60,7 @@
   }
 }
 
-.company__link {
+.company-article__btn {
   display: inline-block;
   margin-top: 19px;
   padding: 13px 50px;
@@ -74,4 +74,8 @@
   @include vp-767 {
     padding: 8px 39px;
   }
+}
+
+.company-article__body--closed p:nth-of-type(n + 3) {
+  display: none;
 }

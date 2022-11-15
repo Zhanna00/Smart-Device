@@ -1,10 +1,7 @@
-<article class="company container">
-	{% include 'picture.twig' with { className: 'company__image', image } %}
+<article class="company-article container {{ bemModifier ? 'company-article--' ~ bemModifier }}" data-company-article>
+	{% include 'picture.twig' with { className: 'company-article__image', image } %}
 
-	<div class="company__container">
+	<div class="company-article__container company-article__body">
 		{{ content }}
-		<a class="company__link button" href="{{ link.url }}" id="btn" onclick="readMore()">
-			{{ link.title }}
-		</a>
 	</div>
 </article>

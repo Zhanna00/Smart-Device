@@ -1,4 +1,4 @@
-<section class="content-section {{ bemMix }}" {{ id ? 'id="' ~ id ~ '"' }} data-content-section>
+<section class="content-section {{ bemModifier ? 'content-section--' ~ bemModifier }} {{ bemMix }} " {{ id ? 'id="' ~ id ~ '"' }} data-content-section>
 
 	<div class="content-section__inner container">
 		{% if image %}

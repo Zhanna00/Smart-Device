@@ -19,6 +19,7 @@ $color-alice-blue-2: #f8fdff;
 $color-whisper: #e5e5e5;
 $color-light-whisper: #ebebeb;
 $color-bg: #041827;
+$color-bg-dark: #03101b;
 $color-bg-50: rgba(4, 24, 39, 0.5);
 $color-bg-15: rgba(4, 20, 39, 0.15);
 
@@ -32,8 +33,7 @@ $black-to-right: linear-gradient(
 
 $black-pearl-80: linear-gradient(
   180deg,
-  rgba(4, 24, 39) 84.9%,
-  rgba(4, 24, 39, 0) 100%
+  rgba(4, 24, 39) 84.9%
 );
 
 $black-pearl-70: linear-gradient(
