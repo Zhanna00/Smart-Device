@@ -419,6 +419,22 @@ template {
   box-sizing: border-box;
 }
 
+*:focus-visible,
+*::before:focus-visible,
+*::after:focus-visible {
+  outline: 2px solid;
+  outline-offset: 2px;
+}
+
+@supports not selector(:focus-visible) {
+  *.focus-visible:focus,
+  *::before.focus-visible:focus,
+  *::after.focus-visible:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -626,61 +642,51 @@ button,
   left: 0;
   z-index: 1000;
   display: flex;
-  flex-direction: column;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(3, 16, 27, 0.7);
   transform: scale(1.2);
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   pointer-events: none;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.modal::-webkit-scrollbar {
-  display: none;
-}
-
-.modal__wrapper {
-  position: relative;
-  display: flex;
-  flex-shrink: 0;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100%;
-  padding: 60px 40px;
-}
-
-.modal__overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
 }
 
 .modal__content {
   position: relative;
-  width: 600px;
+  max-width: 500px;
+  margin: auto;
   padding: 40px;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #00b3ff;
 }
 
 .modal__close-btn {
   position: absolute;
-  top: 22px;
-  right: 22px;
+  top: 15px;
+  right: 15px;
   z-index: 1;
   width: 40px;
   height: 40px;
-  padding: 0;
-  background: rgba(255, 255, 255, 0);
+  color: inherit;
+  background-color: rgba(255, 255, 255, 0);
+  background-image: url("../img/sprite_auto.svg#close");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 20px;
   border: none;
   cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.modal__close-btn:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .modal__close-btn.focus-visible:focus {
+    opacity: 0.8;
+  }
 }
 
 .modal--responsive .modal__content {
@@ -699,6 +705,10 @@ button,
   transition: none;
 }
 
+.modal--dev {
+  position: absolute;
+}
+
 .modal.is-active {
   transform: scale(1);
   visibility: visible;
@@ -712,18 +722,52 @@ button,
   font-size: 14px;
   line-height: 16px;
   color: #f2f5f6;
+  background-color: transparent;
   border-radius: 3px;
   border: 1px solid;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 0.05em;
-  cursor: pointer;
   transition: opacity 0.3s ease;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  transition: opacity 0.3s ease;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.button:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .button.focus-visible:focus {
+    opacity: 0.8;
+  }
 }
 
 .logo {
   position: relative;
   padding: 4px 0 0 70px;
+}
+
+.logo[href] {
+  transition: opacity 0.3s ease;
+}
+
+.logo[href]:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .logo[href].focus-visible:focus {
+    opacity: 0.8;
+  }
 }
 
 .logo__image {
@@ -772,7 +816,7 @@ button,
 .page-header {
   padding: 30px 0 40px;
   color: #f2f5f6;
-  background-image: linear-gradient(to top, transparent, #041827 10px);
+  background-image: linear-gradient(#041827 84.9%, rgba(255, 255, 255, 0));
 }
 
 .page-header__inner {
@@ -1067,42 +1111,46 @@ button,
   line-height: 30px;
 }
 
-.company {
+.company-article {
   position: relative;
   display: flex;
   flex-direction: column;
   color: #041827;
 }
 
-.company__container {
+.company-article__container {
   position: relative;
   padding: 0 0 122px 250px;
 }
 
-.company h2 {
+.company-article h2 {
   margin: 0 0 12px 0;
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
 }
 
-.company p {
+.company-article p {
   margin: 0 0 20px 0;
   font-size: 16px;
   line-height: 22px;
   font-family: "PTMono", "Courier New", monospace;
 }
 
-.company__image {
+.company-article__image {
   position: absolute;
 }
 
-.company__link {
+.company-article__btn {
   display: inline-block;
   margin-top: 19px;
   padding: 13px 50px;
   color: #00b2ff;
   border-color: #00b2ff;
+}
+
+.company-article__body--closed p:nth-of-type(n + 3) {
+  display: none;
 }
 
 .contacts {
@@ -1145,7 +1193,7 @@ button,
 
 .content-section--form {
   position: relative;
-  padding: 165px 0 235px;
+  padding: 165px 0 240px;
   color: #ffffff;
   background-color: #00b3ff;
 }
@@ -1156,8 +1204,8 @@ button,
   top: 0;
   bottom: 0;
   left: 0;
-  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
-  clip-path: polygon(0 0, 100% 0, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, -303px 100%);
+  clip-path: polygon(0 0, 100% 0, -303px 100%);
   width: calc(50% + 10px);
   background-color: rgba(4, 24, 39, 0.5);
 }
@@ -1165,18 +1213,7 @@ button,
 .content-section__inner {
   position: relative;
   display: flex;
-}
-
-.content-section__inner:not(.content-section__inner--closable) {
   align-items: center;
-}
-
-.content-section form {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px 30px;
-  margin: 35px 10px 0 5px;
-  font-family: "PTMono", "Courier New", monospace;
 }
 
 .content-section__body h2 {
@@ -1186,106 +1223,75 @@ button,
   line-height: 50px;
 }
 
+.content-section__body h2--modal {
+  font-size: 30px;
+  line-height: 42px;
+}
+
 .content-section__body p {
+  margin: 0;
   font-size: 16px;
   line-height: 22px;
   font-family: "PTMono", "Courier New", monospace;
-  margin: 0;
-  margin-left: 4px;
 }
 
-.content-section form button {
-  font-family: "RobotoCondensed", "Arial", sans-serif;
-  font-weight: 700;
-  line-height: 19px;
-  text-align: center;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border: none;
-  background-color: #041827;
-  border-radius: 3px;
-  color: inherit;
-  align-self: start;
-  margin-right: 10px;
-  padding: 15px 20px 11px;
+.content-section--form .content-section__body {
+  padding-left: 15px;
 }
 
-.content-section form input:not([type=checkbox]),
-.content-section form textarea {
-  width: 100%;
-  font-family: "PTMono", "Courier New", monospace;
-  color: inherit;
-  padding: 15px;
-  border: none;
-  background-color: rgba(4, 20, 39, 0.15);
-  border-radius: 3px;
-}
-
-.content-section form textarea {
-  grid-column: 1/-1;
-  padding: 24px 14px;
-  min-height: 155px;
-  margin-bottom: 15px;
-}
-
-.content-section form label {
-  display: flex;
-  align-items: center;
-  padding: 14px 10px;
-  font-size: 14px;
-  line-height: 16px;
-  font-family: "PTMono", "Courier New", monospace;
-  color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-}
-
-.content-section form label [type=checkbox] {
-  margin: -4px 11px 0 0;
-  font-family: inherit;
-}
-
-.content-section form [type=checkbox] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  position: relative;
-  width: 22px;
-  height: 15px;
-  color: #ffffff;
-  border: 1px solid #ffffff;
-  border-radius: 2px;
-}
-
-.content-section form [type=checkbox]:checked::before {
-  content: "";
-  position: absolute;
-  top: 4px;
-  left: 3px;
-  width: 6px;
-  height: 3px;
-  border-bottom: 1px solid;
-  border-left: 1px solid;
-  transform: rotate(-45deg);
-}
-
-.content-section--form,
-.content-section__body {
-  padding-left: 10px;
+.content-section--form .content-section__body > p {
+  margin-left: 5px;
 }
 
 .content-section__image {
   flex-shrink: 0;
   max-width: 43%;
-  margin-right: 104px;
-  margin-top: 4px;
-  margin-left: -9px;
+  margin-right: 100px;
+}
+
+.content-section--form .content-section__image {
+  margin-top: 14px;
+}
+
+.content-section__form {
+  margin: 35px 10px 0 5px;
+}
+
+.content-section--modal {
+  padding: 0;
+}
+
+.content-section--modal::before {
+  content: none;
+}
+
+.content-section--modal .content-section__inner {
+  padding: 0;
+}
+
+.content-section--modal .content-section__body {
+  padding: 0;
+}
+
+.content-section--modal .content-section__body > p {
+  margin: 0 30px 0 0;
+}
+
+.content-section--modal h2 {
+  margin: -4px 30px 5px 0;
+  font-size: 30px;
+  line-height: 42px;
+}
+
+.content-section--modal .content-section__form {
+  margin: 38px 0 0;
 }
 
 .socials {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  margin: 4px 0 0 15px;
+  margin: 2px 0 0 15px;
   padding: 0;
   list-style: none;
 }
@@ -1314,7 +1320,7 @@ button,
 }
 
 .nav__heading {
-  margin: 5px 0 22px 0;
+  margin: 7px 0 22px 0;
   font-family: "RobotoCondensed", "Arial", sans-serif;
   font-size: 15px;
   line-height: 16px;
@@ -1376,8 +1382,136 @@ button,
   display: none;
 }
 
-.more-hide {
-  display: none;
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 30px;
+  font-family: "PTMono", "Courier New", monospace;
+}
+
+.form input:not([type=checkbox]),
+.form textarea {
+  width: 100%;
+  padding: 15px 15px 17px 15px;
+  font-family: "PTMono", "Courier New", monospace;
+  background-color: rgba(4, 20, 39, 0.15);
+  border: none;
+  border-radius: 3px;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.form input:not([type=checkbox]):focus-visible,
+.form textarea:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .form input:not([type=checkbox]).focus-visible:focus,
+  .form textarea.focus-visible:focus {
+    opacity: 0.8;
+  }
+}
+
+.form textarea {
+  padding: 24px 17px;
+  min-height: 155px;
+  margin-bottom: 15px;
+}
+
+.form [type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  color: #ffffff;
+  border: 1px solid;
+  border-radius: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.form [type=checkbox]:checked::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  width: 6px;
+  height: 3px;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  transform: rotate(-45deg);
+}
+
+.form label {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "PTMono", "Courier New", monospace;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.form label:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .form label.focus-visible:focus {
+    opacity: 0.8;
+  }
+}
+
+.form label [type=checkbox] {
+  margin-top: -1px;
+  margin-right: 10px;
+}
+
+.form__group {
+  margin: 0;
+}
+
+.form__group--wide {
+  grid-column: 1/-1;
+}
+
+.form__group--last {
+  order: 100500;
+}
+
+.form__btn {
+  font-family: "RobotoCondensed", "Arial", sans-serif;
+  font-size: 16px;
+  align-self: start;
+  margin: 0 10px 0 0;
+  padding: 15px 20px 11px;
+  line-height: 19px;
+  background-color: #041827;
+  border: none;
+}
+
+[data-modal] .form {
+  grid-template-columns: 1fr;
+}
+
+[data-modal] .form textarea {
+  margin-bottom: 5px;
+}
+
+[data-modal] .form label {
+  padding: 0 10px 4px;
+}
+
+[data-modal] .form .form__btn {
+  margin-right: 0;
 }
 
 /* @mixin hover-focus {
@@ -1421,13 +1555,20 @@ button,
   }
 */
 
+@media (min-width: 1024px) {
+  .modal--dev .modal__content {
+    margin-top: 146px;
+    transform: translateX(-8px);
+  }
+}
+
 @media (max-width: 1023px) {
   .page--form .page__main {
     padding-top: 100px;
   }
 
   .page-header {
-    padding-top: 20px;
+    padding: 20px 0 30px;
   }
 
   .page-header__inner {
@@ -1486,6 +1627,10 @@ button,
     column-count: 1;
   }
 
+  .page-footer__nav--sitemap li:last-child {
+    margin-bottom: 0;
+  }
+
   .main-header {
     min-height: 640px;
     padding-top: 95px;
@@ -1512,7 +1657,7 @@ button,
   }
 
   .advantages {
-    margin: 80px auto;
+    margin: 80px auto 77px auto;
   }
 
   .advantages__list {
@@ -1531,7 +1676,7 @@ button,
   }
 
   .advantages__item p {
-    margin-top: 6px;
+    margin-top: 10px;
   }
 
   .catalog {
@@ -1557,16 +1702,16 @@ button,
     max-width: 150px;
   }
 
-  .company {
+  .company-article {
     padding-left: 45px;
   }
 
-  .company__container {
+  .company-article__container {
     padding: 0 0 80px 180px;
     margin-top: -5px;
   }
 
-  .company__link {
+  .company-article__btn {
     margin-top: -4px;
   }
 
@@ -1587,46 +1732,27 @@ button,
   }
 
   .content-section--form {
-    padding: 44px 0 124px;
-  }
-
-  .content-section form {
-    margin: 25px 0 0 0;
+    padding: 44px 0 118px;
   }
 
   .content-section__body h2 {
     margin: 0 0 8px;
   }
 
-  .content-section__body p {
-    margin-left: 0;
-  }
-
-  .content-section form button {
-    margin-right: 55px;
-  }
-
-  .content-section form textarea {
-    padding-top: 31px;
-    margin-bottom: 13px;
-  }
-
-  .content-section form label {
-    padding: 0;
-    margin-top: 4px;
-  }
-
-  .content-section form [type=checkbox] {
-    width: 18px;
-  }
-
-  .content-section--form,
-  .content-section__body {
+  .content-section--form .content-section__body {
     padding-left: 0;
   }
 
   .content-section__image {
     display: none;
+  }
+
+  .content-section__form {
+    margin: 24px 0 0 0;
+  }
+
+  .content-section--modal {
+    padding: 0;
   }
 
   .socials {
@@ -1640,6 +1766,27 @@ button,
   .nav__item:last-child {
     margin-bottom: 0;
   }
+
+  .form textarea {
+    padding: 29px 15px;
+    margin-bottom: 13px;
+  }
+
+  .form label {
+    padding: 10px 0;
+  }
+
+  .form label [type=checkbox] {
+    margin-top: -2px;
+  }
+
+  .form__btn {
+    margin-right: 54px;
+  }
+
+  [data-modal] .form .form__btn {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1647,12 +1794,7 @@ button,
     padding: 0 25px;
   }
 
-  .modal__wrapper {
-    padding: 60px 16px;
-  }
-
   .modal__content {
-    width: 100%;
     padding: 20px;
   }
 
@@ -1691,7 +1833,7 @@ button,
   }
 
   .page-footer {
-    padding: 35px 0;
+    padding: 34px 0;
   }
 
   .page-footer__inner {
@@ -1736,6 +1878,10 @@ button,
     -ms-grid-column: 1;
   }
 
+  .page-footer__nav--sitemap li:last-child {
+    margin-bottom: 0;
+  }
+
   .main-header {
     min-height: 560px;
     padding-top: 79px;
@@ -1771,6 +1917,11 @@ button,
 
   .advantages__list {
     grid-template-columns: 1fr;
+  }
+
+  .advantages__item::before {
+    width: 30px;
+    height: 30px;
   }
 
   .advantages__item {
@@ -1822,40 +1973,35 @@ button,
     font-size: 18px;
   }
 
-  .company {
+  .company-article {
     margin-bottom: 81px;
   }
 
-  .company__container {
+  .company-article__container {
     padding: 0;
   }
 
-  .company h2 {
+  .company-article h2 {
     font-size: 28px;
     line-height: 39px;
   }
 
-  .company p {
+  .company-article p {
     margin: 0 0 18px;
     font-size: 14px;
     line-height: 19px;
   }
 
-  .company__image {
+  .company-article__image {
     display: none;
   }
 
-  .company__link {
+  .company-article__btn {
     padding: 8px 39px;
   }
 
   .content-section--form {
-    padding: 46px 0 89px;
-  }
-
-  .content-section form {
-    grid-template-columns: 1fr;
-    margin-top: 34px;
+    padding: 46px 0 87px;
   }
 
   .content-section__body h2 {
@@ -1868,19 +2014,16 @@ button,
     line-height: 19px;
   }
 
-  .content-section form button {
-    margin-right: 0;
-    padding: 15px 56px 11;
+  .content-section--form .content-section__body > p {
+    margin: 0;
   }
 
-  .content-section form textarea {
-    padding-top: 24px;
-    min-height: 178px;
-    margin-bottom: 9px;
+  .content-section__form {
+    margin-top: 38px;
   }
 
-  .content-section form label {
-    margin: 2px 0 0 6px;
+  .content-section--modal {
+    padding: 0;
   }
 
   .nav {
@@ -1946,6 +2089,20 @@ button,
     margin: 16px 0 0;
   }
 
+  .nav__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .nav__item {
+    margin-bottom: 11px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .nav__item:first-child {
+    margin-bottom: 19px;
+  }
+
   .mobile-show {
     display: inline;
   }
@@ -1953,9 +2110,61 @@ button,
   .mobile-hide {
     display: none;
   }
+
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .form textarea {
+    font-size: 16px;
+    padding-top: 24px;
+    min-height: 178px;
+    margin-bottom: 10px;
+  }
+
+  .form label {
+    padding: 4px 5px;
+  }
+
+  .form__btn {
+    margin: 0;
+  }
 }
 
 @media (hover: hover) {
+  .modal__close-btn:hover,
+  .modal__close-btn:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .modal__close-btn:active,
+  .modal__close-btn:hover:active,
+  .modal__close-btn.focus-visible:active {
+    opacity: 0.5;
+  }
+
+  .button:hover,
+  .button:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .button:active,
+  .button:hover:active,
+  .button.focus-visible:active {
+    opacity: 0.5;
+  }
+
+  .logo[href]:hover,
+  .logo[href]:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .logo[href]:active,
+  .logo[href]:hover:active,
+  .logo[href].focus-visible:active {
+    opacity: 0.5;
+  }
+
   .nav__toggler:hover,
   .nav__toggler:hover:not(.focus-visible) {
     opacity: 0.8;
@@ -1975,6 +2184,24 @@ button,
   .nav__link:active,
   .nav__link:hover:active,
   .nav__link.focus-visible:active {
+    opacity: 0.5;
+  }
+
+  .form input:not([type=checkbox]):hover,
+  .form input:not([type=checkbox]):hover:not(.focus-visible),
+  .form textarea:hover,
+  .form textarea:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .form label:hover,
+  .form label:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .form label:active,
+  .form label:hover:active,
+  .form label.focus-visible:active {
     opacity: 0.5;
   }
 }
