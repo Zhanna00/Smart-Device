@@ -1054,7 +1054,7 @@ button,
 .catalog__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 7%;
   list-style: none;
   margin-top: 54px;
 }
@@ -1064,9 +1064,19 @@ button,
   color: #ffffff;
   z-index: 1;
   display: block;
-  min-height: 650px;
-  padding: 48px 40px 100px;
+  padding-top: 185.71%;
   transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.catalog__link:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .catalog__link.focus-visible:focus {
+    opacity: 0.8;
+  }
 }
 
 .catalog__link::before {
@@ -1096,8 +1106,12 @@ button,
 }
 
 .catalog__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 250px;
   margin: 0;
-  max-width: 190px;
+  padding: 48px 40px 100px;
   font-size: 20px;
   line-height: 30px;
 }
@@ -1710,17 +1724,13 @@ button,
     gap: 30px;
   }
 
-  .catalog__link::before {
-    right: -1px;
-  }
-
   .catalog__link {
-    min-height: 250px;
-    padding: 37px 44px 100px;
+    padding-top: 37.31%;
   }
 
   .catalog__text {
-    max-width: 150px;
+    max-width: 238px;
+    padding: 37px 44px 100px;
   }
 
   .company-article {
@@ -1978,19 +1988,18 @@ button,
     margin-top: 29px;
   }
 
+  .catalog__link {
+    min-height: 250px;
+  }
+
   .catalog__link::before {
-    right: 0;
-    bottom: 0;
     width: 40px;
     height: 40px;
   }
 
-  .catalog__link {
-    min-height: 250px;
-    padding: 26px 30px 70px;
-  }
-
   .catalog__text {
+    max-width: 195px;
+    padding: 26px 30px 70px;
     font-size: 18px;
   }
 
@@ -2167,6 +2176,17 @@ button,
   .logo[href]:active,
   .logo[href]:hover:active,
   .logo[href].focus-visible:active {
+    opacity: 0.5;
+  }
+
+  .catalog__link:hover,
+  .catalog__link:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .catalog__link:active,
+  .catalog__link:hover:active,
+  .catalog__link.focus-visible:active {
     opacity: 0.5;
   }
 
