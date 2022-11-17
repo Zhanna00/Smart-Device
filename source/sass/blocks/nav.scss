@@ -62,7 +62,7 @@
   }
 }
 
-.nav__toggler [aria-expanded="true"] {
+.nav__toggler[aria-expanded="true"] {
   &::after {
     display: none;
   }
@@ -72,7 +72,7 @@
   }
 }
 
-.nav__toggler [data-nojs] {
+.nav__toggler[data-nojs] {
   display: none;
 
   + .nav__list {
