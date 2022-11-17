@@ -443,6 +443,7 @@ body {
 }
 
 html {
+  min-width: 320px;
   scroll-behavior: smooth;
   font-style: normal;
   font-weight: 400;
@@ -893,6 +894,7 @@ button,
   padding: 144px 0 120px;
   color: #f2f5f6;
   background-color: #041827;
+  overflow-x: hidden;
 }
 
 .main-header__container {
