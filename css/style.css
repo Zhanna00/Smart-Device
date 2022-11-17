@@ -562,6 +562,20 @@ button,
   appearance: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
 .wrapper {
   position: relative;
   display: flex;
@@ -578,28 +592,6 @@ button,
 
 .wrapper main {
   flex-grow: 1;
-}
-
-.rouble {
-  font-family: "Rouble", "Arial", sans-serif;
-  /* stylelint-disable */
-  text-transform: lowercase !important;
-  font-weight: 400 !important;
-  /* stylelint-enable */
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border: 0;
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
 }
 
 .scroll-lock-ios {
@@ -652,43 +644,6 @@ button,
   pointer-events: none;
 }
 
-.modal__content {
-  position: relative;
-  max-width: 500px;
-  margin: auto;
-  padding: 40px;
-  color: #ffffff;
-  background-color: #00b3ff;
-}
-
-.modal__close-btn {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  color: inherit;
-  background-color: rgba(255, 255, 255, 0);
-  background-image: url("../img/sprite_auto.svg#close");
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: 20px;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
-}
-
-.modal__close-btn:focus-visible {
-  opacity: 0.8;
-}
-
-@supports not selector(:focus-visible) {
-  .modal__close-btn.focus-visible:focus {
-    opacity: 0.8;
-  }
-}
-
 .modal--responsive .modal__content {
   width: 100%;
 }
@@ -714,6 +669,40 @@ button,
   visibility: visible;
   opacity: 1;
   pointer-events: auto;
+}
+
+.modal__content {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  padding: 40px;
+  color: #ffffff;
+  background-color: #00b2ff;
+}
+
+.modal__close-btn {
+  -webkit-mask: url("../img/sprite_auto.svg#close") no-repeat center/100%;
+  mask: url("../img/sprite_auto.svg#close") no-repeat center/100%;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.modal__close-btn:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .modal__close-btn.focus-visible:focus {
+    opacity: 0.8;
+  }
 }
 
 .button {
@@ -1142,7 +1131,7 @@ button,
 }
 
 .company-article__btn {
-  display: inline-block;
+  display: inline;
   margin-top: 19px;
   padding: 13px 50px;
   color: #00b2ff;
@@ -1475,6 +1464,20 @@ button,
   margin-right: 10px;
 }
 
+.form label[for] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
 .form__group {
   margin: 0;
 }
@@ -1512,6 +1515,7 @@ button,
 
 [data-modal] .form .form__btn {
   margin-right: 0;
+  margin-top: -3px;
 }
 
 /* @mixin hover-focus {
@@ -1794,12 +1798,12 @@ button,
     padding: 0 25px;
   }
 
-  .modal__content {
-    padding: 20px;
-  }
-
   .modal--fit-content .modal__content {
     width: 100%;
+  }
+
+  .modal__content {
+    padding: 20px;
   }
 
   .logo--headable {
