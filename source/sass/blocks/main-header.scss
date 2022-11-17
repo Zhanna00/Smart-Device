@@ -5,6 +5,7 @@
   padding: 144px 0 120px;
   color: $color-alice-blue;
   background-color: $color-bg;
+  overflow-x: hidden;
 
   @include vp-1023 {
     min-height: 640px;
