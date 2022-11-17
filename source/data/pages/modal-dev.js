@@ -20,6 +20,7 @@ export default {
       webp: 'img/main-header.webp',
       webp2x: 'img/main-header@2x.webp',
     },
+    alt: 'Фон главного экрана',
     link: {
       mobileTitle: 'бесплатная консультация',
       title: 'Получить бесплатную консультацию',

@@ -14,6 +14,7 @@ export default {
       webp: 'img/paper-airplane.webp',
       webp2x: 'img/paper-airplane@2x.webp',
     },
+    alt: 'Бумажный самолет',
   },
   callbackLink: null, // Переопределяем общие данные из global.js
 };

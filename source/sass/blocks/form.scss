@@ -93,6 +93,10 @@
       padding: 4px 5px;
     }
   }
+
+  label[for] {
+    @include visually-hidden;
+  }
 }
 
 .form__group {
@@ -139,6 +143,7 @@
 
   .form__btn {
     margin-right: 0;
+    margin-top: -3px;
 
     @include vp-1023 {
       margin-right: 0;

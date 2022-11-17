@@ -36,6 +36,7 @@ export default {
       webp: 'img/company.webp',
       webp2x: 'img/company@2x.webp',
     },
+    alt: 'Цифры 2022',
   },
   advantages: [
     {
@@ -85,6 +86,7 @@ export default {
       webp: 'img/paper-airplane.webp',
       webp2x: 'img/paper-airplane@2x.webp',
     },
+    alt: 'Бумажный самолет',
   },
   promo: {
     content: html`<h2>Печатные платы</h2>
@@ -96,6 +98,7 @@ export default {
       webp: 'img/main-header.webp',
       webp2x: 'img/main-header@2x.webp',
     },
+    alt: 'Фон главного экрана',
     link: {
       mobileTitle: 'бесплатная консультация',
       title: 'Получить бесплатную консультацию',
@@ -109,10 +112,6 @@ export default {
         image: {
           default: 'img/service-1.jpg',
           default2x: 'img/service-1@2x.jpg',
-          defaultMobile: 'img/service-1-mobile.jpg',
-          defaultMobile2x: 'img/service-1-mobile@2x.jpg',
-          defaultTablet: 'img/service-1-tablet.jpg',
-          defaultTablet2x: 'img/service-1-tablet@2x.jpg',
           webp: 'img/service-1.webp',
           webp2x: 'img/service-1@2x.webp',
           webpMobile: 'img/service-1-mobile.webp',
@@ -124,15 +123,12 @@ export default {
           title: 'Производство печатных плат',
           url: '#!',
         },
+        alt: 'Фон первой карточки',
       },
       {
         image: {
           default: 'img/service-2.jpg',
           default2x: 'img/service-2@2x.jpg',
-          defaultMobile: 'img/service-2-mobile.jpg',
-          defaultMobile2x: 'img/service-2-mobile@2x.jpg',
-          defaultTablet: 'img/service-2-tablet.jpg',
-          defaultTablet2x: 'img/service-2-tablet@2x.jpg',
           webp: 'img/service-2.webp',
           webp2x: 'img/service-2@2x.webp',
           webpMobile: 'img/service-2-mobile.webp',
@@ -144,15 +140,12 @@ export default {
           title: 'Монтаж печатных плат',
           url: '#!',
         },
+        alt: 'Фон второй карточки',
       },
       {
         image: {
           default: 'img/service-3.jpg',
           default2x: 'img/service-3@2x.jpg',
-          defaultMobile: 'img/service-3-mobile.jpg',
-          defaultMobile2x: 'img/service-3-mobile@2x.jpg',
-          defaultTablet: 'img/service-3-tablet.jpg',
-          defaultTablet2x: 'img/service-3-tablet@2x.jpg',
           webp: 'img/service-3.webp',
           webp2x: 'img/service-3@2x.webp',
           webpMobile: 'img/service-3-mobile.webp',
@@ -164,6 +157,7 @@ export default {
           title: 'Комплектующие для светотехники',
           url: '#!',
         },
+        alt: 'Фон третьей карточки',
       },
     ],
     mobileTitle: 'Товары и услуги Smart Device',

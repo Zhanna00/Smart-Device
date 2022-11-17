@@ -1,4 +1,4 @@
-<a class="logo {{ bemMix }}" href="#!">
+<a class="logo {{ bemMix }}" {{ page == 'index' ? 'aria-current="page"' : 'href="index.html"' }} >
 	<img class="logo__image" src="img/svg/logo.svg" alt="Логотип {{ projectName}}." width="55" height="55">
 
 	{% if isHeading %}

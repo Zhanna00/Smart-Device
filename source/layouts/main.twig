@@ -19,15 +19,16 @@
 				{% include 'components/page-header.twig' with { bemMix: 'page__header' } %}
 			{% endblock %}
 
-			<main class="page__main page-main"> {% block main %}{% endblock %}
-				</main>
+			<main class="page__main page-main">
+				{% block main %}{% endblock %}
+			</main>
 
-				{% block footer %}
-					{% include 'components/page-footer.twig' with { bemMix: 'page__footer' } %}
-				{% endblock %}
+			{% block footer %}
+				{% include 'components/page-footer.twig' with { bemMix: 'page__footer' } %}
+			{% endblock %}
+		</div>
 
-				{% block modal %}{% endblock %}
-				{% include 'modules/scripts.twig' %}
-			</div>
-		</body>
-	</html>
+		{% block modal %}{% endblock %}
+		{% include 'modules/scripts.twig' %}
+	</body>
+</html>

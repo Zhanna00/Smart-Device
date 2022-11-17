@@ -3,5 +3,5 @@
 {% set pageModifier = 'page--form' %}
 
 {% block main %}
-	{% include '../components/content-section.twig' with callback %}
+	{% include '../components/content-section.twig' with callback|merge({ bemModifier: 'form' }) %}
 {% endblock %}
