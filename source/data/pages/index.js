@@ -36,7 +36,6 @@ export default {
       webp: 'img/company.webp',
       webp2x: 'img/company@2x.webp',
     },
-    alt: 'Цифры 2022',
   },
   advantages: [
     {
@@ -86,7 +85,6 @@ export default {
       webp: 'img/paper-airplane.webp',
       webp2x: 'img/paper-airplane@2x.webp',
     },
-    alt: 'Бумажный самолет',
   },
   promo: {
     content: html`<h2>Печатные платы</h2>
@@ -98,7 +96,6 @@ export default {
       webp: 'img/main-header.webp',
       webp2x: 'img/main-header@2x.webp',
     },
-    alt: 'Фон главного экрана',
     link: {
       mobileTitle: 'бесплатная консультация',
       title: 'Получить бесплатную консультацию',
@@ -123,7 +120,6 @@ export default {
           title: 'Производство печатных плат',
           url: '#!',
         },
-        alt: 'Фон первой карточки',
       },
       {
         image: {
@@ -140,7 +136,6 @@ export default {
           title: 'Монтаж печатных плат',
           url: '#!',
         },
-        alt: 'Фон второй карточки',
       },
       {
         image: {
@@ -157,7 +152,6 @@ export default {
           title: 'Комплектующие для светотехники',
           url: '#!',
         },
-        alt: 'Фон третьей карточки',
       },
     ],
     mobileTitle: 'Товары и услуги Smart Device',
