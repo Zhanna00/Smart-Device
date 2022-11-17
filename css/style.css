@@ -1332,6 +1332,22 @@ button,
   }
 }
 
+.nav__toggler [aria-expanded=true]::after {
+  display: none;
+}
+
+.nav__toggler [aria-expanded=true] + .nav__list {
+  display: block;
+}
+
+.nav__toggler [data-nojs] {
+  display: none;
+}
+
+.nav__toggler [data-nojs] + .nav__list {
+  display: block;
+}
+
 .nav__list {
   margin: 0;
   padding: 0;
@@ -2069,22 +2085,6 @@ button,
 
   .nav__toggler::after {
     transform: rotate(90deg);
-  }
-
-  .nav__toggler[aria-expanded=true]::after {
-    display: none;
-  }
-
-  .nav__toggler[aria-expanded=true] + .nav__list {
-    display: block;
-  }
-
-  .nav__toggler[data-nojs] {
-    display: none;
-  }
-
-  .nav__toggler[data-nojs] + .nav__list {
-    display: block;
   }
 
   .nav__list {
