@@ -59,24 +59,24 @@
     &::after {
       transform: rotate(90deg);
     }
+  }
+}
 
-    &[aria-expanded="true"] {
-      &::after {
-        display: none;
-      }
+.nav__toggler [aria-expanded="true"] {
+  &::after {
+    display: none;
+  }
 
-      + .nav__list {
-        display: block;
-      }
-    }
+  + .nav__list {
+    display: block;
+  }
+}
 
-    &[data-nojs] {
-      display: none;
+.nav__toggler [data-nojs] {
+  display: none;
 
-      + .nav__list {
-        display: block;
-      }
-    }
+  + .nav__list {
+    display: block;
   }
 }
 
