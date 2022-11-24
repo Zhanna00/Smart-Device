@@ -53,6 +53,7 @@ export default {
       url: '#!',
     })),
   },
+  projectName: 'Smart Device',
   socials: [
     {
       id: 'classmates',

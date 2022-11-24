@@ -1,6 +1,6 @@
 .logo {
   position: relative;
-  padding: 4px 0 0 70px;
+  padding: 49px 0 0 70px;
 }
 
 .logo[href] {
@@ -12,7 +12,6 @@
   top: 0;
   left: 0;
 }
-
 
 .logo--headable {
   @include vp-767 {

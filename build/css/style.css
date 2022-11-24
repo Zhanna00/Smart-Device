@@ -744,7 +744,7 @@ button,
 
 .logo {
   position: relative;
-  padding: 4px 0 0 70px;
+  padding: 49px 0 0 70px;
 }
 
 .logo[href] {
@@ -1048,7 +1048,7 @@ button,
 .catalog__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 7%;
+  gap: 60px 7%;
   list-style: none;
   margin-top: 54px;
 }
