@@ -8,7 +8,7 @@
   <link href="fonts/Roboto-Medium.woff2" rel="preload" as="font" crossorigin="anonymous">
   <link href="fonts/RobotoCondensed-Bold.woff2" rel="preload" as="font" crossorigin="anonymous">
   <title>Smart Device</title>
-  <link rel="stylesheet" href="css/style.min.css?1669313687698">
+  <link rel="stylesheet" href="css/style.min.css?1669313687764">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <div class="page page--form">
+  <div class="page ">
     <header class="page-header page__header" data-fix-block="">
       <div class="page-header__inner container">
         <a class="logo logo--headable" href="index.html">
@@ -39,46 +39,26 @@
             </a>
           </li>
         </ul>
+        <a class="page-header__button button button--secondary" href="callback.html" data-open-modal="callback">
+          Заказать звонок
+        </a>
       </div>
     </header>
 
     <main class="page__main page-main">
 
-      <section class="content-section content-section--form  " data-content-section="">
-        <div class="content-section__inner container">
-          <div class="content-section__image">
-            <picture>
-              <source type="image/webp" srcset="img/paper-airplane.webp 1x, img/paper-airplane@2x.webp 2x">
-              <img src="img/paper-airplane.png" srcset="img/paper-airplane@2x.png 2x" alt="" aria-hidden="true" loading="lazy">
-            </picture>
-          </div>
-          <div class="content-section__body">
-            <h2>Закажите звонок</h2>
-            <p>
-              Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время
-            </p>
-            <form class="form content-section__form" action="https://echo.htmlacademy.ru" method="get" data-form="">
-              <p class="form__group  ">
-                <input id="callback-name" name="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\- ]+$" required="">
-                <label for="callback-name">Имя</label>
-              </p>
-              <p class="form__group  ">
-                <input id="callback-phone" name="phone" type="tel" placeholder="Телефон" pattern="^\+7\(\d{3}\)\d{7}$" required="">
-                <label for="callback-phone">Телефон</label>
-              </p>
-              <p class="form__group form__group--wide ">
-                <textarea id="callback-comment" name="comment" placeholder="Ваш вопрос"></textarea>
-                <label for="callback-comment">Ваш вопрос</label>
-              </p>
-              <p class="form__group  form__group--last">
-                <label>
-                  <input name="agree" type="checkbox" checked="" required="">
-                  Я&nbsp;согласен на&nbsp;обработку персональных данных
-                </label>
-              </p>
-              <button class="form__btn button" type="submit">Отправить</button>
-            </form>
-          </div>
+      <section class="main-header">
+        <picture>
+          <source type="image/webp" srcset="img/main-header.webp 1x, img/main-header@2x.webp 2x">
+          <img src="img/main-header.jpg" srcset="img/main-header@2x.jpg 2x" class="main-header__image" alt="" aria-hidden="true">
+        </picture>
+        <div class="main-header__container container">
+          <h2>Печатные платы</h2>
+          <p>производство и&nbsp;монтаж, поставка комплектующих, блоков и&nbsp;модулей</p>
+          <a class="main-header__button" href="#feedback">
+            <span class="mobile-hide">Получить бесплатную консультацию</span>
+            <span class="mobile-show">бесплатная консультация</span>
+          </a>
         </div>
       </section>
     </main>
@@ -159,7 +139,53 @@
       </div>
     </footer>
   </div>
+  <div class="modal modal--dev is-active" data-modal="callback">
+    <div class="modal__content">
+
+      <section class="content-section content-section--modal  " data-content-section="">
+        <div class="content-section__inner container">
+          <div class="content-section__body">
+            <h2>Закажите звонок</h2>
+            <p>
+              Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время
+            </p>
+            <form class="form content-section__form" action="https://echo.htmlacademy.ru" method="get" data-form="">
+              <p class="form__group  ">
+                <input id="callback-name" name="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\- ]+$" required="">
+                <label for="callback-name">Имя</label>
+              </p>
+              <p class="form__group  ">
+                <input id="callback-phone" name="phone" type="tel" placeholder="Телефон" pattern="^\+7\(\d{3}\)\d{7}$" required="">
+                <label for="callback-phone">Телефон</label>
+              </p>
+              <p class="form__group form__group--wide ">
+                <textarea id="callback-comment" name="comment" placeholder="Ваш вопрос"></textarea>
+                <label for="callback-comment">Ваш вопрос</label>
+              </p>
+              <p class="form__group  form__group--last">
+                <label>
+                  <input name="agree" type="checkbox" checked="" required="">
+                  Я&nbsp;согласен на&nbsp;обработку персональных данных
+                </label>
+              </p>
+              <button class="form__btn button" type="submit">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <button class="modal__close-btn" type="button" data-close-modal="callback">
+        <span class="visually-hidden">Закрыть.</span>
+      </button>
+    </div>
+  </div>
   <script src="js/vendor.min.js"></script>
-  <script src="js/main.min.js?1669313687698"></script>
+  <script src="js/main.min.js?1669313687764"></script>
+  <script>
+    window.pinegladePP = {
+      breakpoints: [320, 768, 1320]
+    };
+
+  </script>
+  <script src="https://efiand.github.io/pineglade-pp/pineglade-pp.min.js"></script>
 </body>
 </html>

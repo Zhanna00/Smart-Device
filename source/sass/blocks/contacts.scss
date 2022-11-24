@@ -44,6 +44,8 @@
   @mixin vp-1023 {
     display: none;
   }
+
+  @include default-interactive;
 }
 
 .contacts__text {

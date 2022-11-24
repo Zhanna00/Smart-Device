@@ -21,6 +21,8 @@
     border-radius: 50%;
   }
 
+  @include default-interactive;
+
   &--classmates::before {
     @include mask("classmates");
   }

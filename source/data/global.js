@@ -53,8 +53,6 @@ export default {
       url: '#!',
     })),
   },
-  projectName: 'Smart Device',
-  slogan: 'умные технологии',
   socials: [
     {
       id: 'classmates',
