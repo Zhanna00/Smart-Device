@@ -1,25 +1,3 @@
-.logo {
-  position: relative;
-  padding: 49px 0 0 70px;
-}
-
 .logo[href] {
   @include default-interactive;
-}
-
-.logo__image {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.logo--headable {
-  @include vp-767 {
-    padding: 0;
-
-    .logo__image {
-      position: static;
-      width: 35px;
-    }
-  }
 }

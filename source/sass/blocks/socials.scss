@@ -2,13 +2,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  margin: 2px 0 0 15px; // Pixelperfect
   padding: 0;
   list-style: none;
-
-  @include vp-1023 {
-    margin: 0;
-  }
 }
 
 .socials__link {

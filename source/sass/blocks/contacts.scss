@@ -2,20 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .contacts__item {
-  margin: 8px 22px 10px 13px;
-
-  @include vp-1023 {
-    margin: 5px 20px;
-  }
+  margin: 0 15px;
 }
 
 .contacts__link {
+  padding: 5px;
   display: flex;
   align-items: center;
   font-family: $ff-mono;
@@ -24,13 +20,7 @@
     content: "";
     width: 20px;
     height: 20px;
-    margin: 3px 15px 0 0;
-    margin-top: 3px;
     background-color: $color-deep-sky-blue;
-
-    @include vp-1023 {
-      margin: 0;
-    }
   }
 
   &--mailto::before {
@@ -49,6 +39,8 @@
 }
 
 .contacts__text {
+  margin-left: 15px;
+
   @include vp-1023 {
     display: none;
   }

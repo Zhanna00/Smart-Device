@@ -742,11 +742,6 @@ button,
   }
 }
 
-.logo {
-  position: relative;
-  padding: 49px 0 0 70px;
-}
-
 .logo[href] {
   transition: opacity 0.3s ease;
 }
@@ -759,12 +754,6 @@ button,
   .logo[href].focus-visible:focus {
     opacity: 0.8;
   }
-}
-
-.logo__image {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .page {
@@ -787,25 +776,29 @@ button,
 }
 
 .page-header {
-  padding: 30px 0 40px;
+  padding: 25px 0 40px;
   color: #f2f5f6;
   background-image: linear-gradient(#041827 84.9%, rgba(255, 255, 255, 0));
 }
 
 .page-header__inner {
   display: grid;
-  grid-template-columns: minmax(210px, 29fr) 50fr 29fr;
+  grid-template-columns: minmax(210px, 28fr) 50fr 29fr;
   gap: 75px;
   align-items: center;
 }
 
 .page-header__button {
-  margin-left: 68px;
   width: 160px;
+  margin-left: 70px;
 }
 
 .page-header__logo {
-  align-items: center;
+  transform: translateY(5px);
+}
+
+.page-header__contacts {
+  margin: 0;
 }
 
 .page__footer {
@@ -813,7 +806,7 @@ button,
 }
 
 .page-footer {
-  padding: 50px 0 20px;
+  padding: 52px 0 20px;
   background-color: #041827;
   color: #ffffff;
 }
@@ -850,6 +843,7 @@ button,
   -ms-grid-column: 1;
   grid-area: socials;
   justify-self: start;
+  margin: -4px 0 0 15px;
 }
 
 .page-footer__nav--sitemap {
@@ -907,11 +901,10 @@ button,
 .main-header__image {
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
+  width: 100%;
+  max-width: none;
   height: 100%;
-  margin: 0 auto;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -1155,16 +1148,16 @@ button,
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .contacts__item {
-  margin: 8px 22px 10px 13px;
+  margin: 0 15px;
 }
 
 .contacts__link {
+  padding: 5px;
   display: flex;
   align-items: center;
   font-family: "PTMono", "Courier New", monospace;
@@ -1175,8 +1168,6 @@ button,
   content: "";
   width: 20px;
   height: 20px;
-  margin: 3px 15px 0 0;
-  margin-top: 3px;
   background-color: #00b2ff;
 }
 
@@ -1200,6 +1191,10 @@ button,
   }
 }
 
+.contacts__text {
+  margin-left: 15px;
+}
+
 .content-section--form {
   position: relative;
   padding: 165px 0 240px;
@@ -1213,8 +1208,8 @@ button,
   top: 0;
   bottom: 0;
   left: 0;
-  -webkit-clip-path: polygon(0 0, 100% 0, -303px 100%);
-  clip-path: polygon(0 0, 100% 0, -303px 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
   width: calc(50% + 10px);
   background-color: rgba(4, 24, 39, 0.5);
 }
@@ -1237,7 +1232,7 @@ button,
   line-height: 42px;
 }
 
-.content-section__body p {
+.content-section__body > p {
   margin: 0;
   font-size: 16px;
   line-height: 22px;
@@ -1249,7 +1244,7 @@ button,
 }
 
 .content-section--form .content-section__body > p {
-  margin-left: 5px;
+  margin-left: 0;
 }
 
 .content-section__image {
@@ -1292,15 +1287,10 @@ button,
   line-height: 42px;
 }
 
-.content-section--modal .content-section__form {
-  margin: 38px 0 0;
-}
-
 .socials {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  margin: 2px 0 0 15px;
   padding: 0;
   list-style: none;
 }
@@ -1626,7 +1616,7 @@ button,
   }
 
   .page-header {
-    padding: 20px 0 30px;
+    padding: 20px 0 25px;
   }
 
   .page-header__inner {
@@ -1638,13 +1628,17 @@ button,
     display: none;
   }
 
+  .page-header__logo {
+    transform: translateY(0);
+  }
+
   .page-header__contacts {
     justify-content: end;
     transform: translate(-9px, -5px);
   }
 
   .page-footer {
-    padding-bottom: 60px;
+    padding: 50px 0 60px;
   }
 
   .page-footer__inner {
@@ -1654,8 +1648,10 @@ button,
   }
 
   .page-footer__socials {
+    margin: 0;
     justify-self: end;
     align-self: center;
+    transform: translateY(-3px);
   }
 
   .page-footer__nav {
@@ -1715,15 +1711,15 @@ button,
   }
 
   .advantages {
-    margin: 80px auto 77px auto;
+    margin: 80px auto 80px auto;
   }
 
   .advantages__list {
-    gap: 30px 31px;
+    gap: 27px 28px;
   }
 
   .advantages__item::before {
-    margin-bottom: 14px;
+    margin-bottom: 15px;
   }
 
   .advantages__item {
@@ -1734,7 +1730,7 @@ button,
   }
 
   .advantages__item p {
-    margin-top: 10px;
+    margin-top: 9px;
   }
 
   .catalog {
@@ -1769,14 +1765,6 @@ button,
     margin-top: -4px;
   }
 
-  .contacts__item {
-    margin: 5px 20px;
-  }
-
-  .contacts__link::before {
-    margin: 0;
-  }
-
   .contacts__text {
     display: none;
   }
@@ -1786,7 +1774,7 @@ button,
   }
 
   .content-section--form {
-    padding: 44px 0 118px;
+    padding: 47px 0 118px;
   }
 
   .content-section__body h2 {
@@ -1809,12 +1797,8 @@ button,
     padding: 0;
   }
 
-  .socials {
-    margin: 0;
-  }
-
   .nav__heading {
-    margin-top: 7px;
+    margin-top: 0;
   }
 
   .nav__item:last-child {
@@ -1856,15 +1840,6 @@ button,
     padding: 20px;
   }
 
-  .logo--headable {
-    padding: 0;
-  }
-
-  .logo--headable .logo__image {
-    position: static;
-    width: 35px;
-  }
-
   .page--form .page__main {
     padding-top: 50px;
   }
@@ -1878,7 +1853,20 @@ button,
   }
 
   .page-header__logo {
-    padding: 0;
+    position: relative;
+    width: 35px;
+    height: 35px;
+    overflow: hidden;
+    transform: none;
+  }
+
+  .page-header__logo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    max-width: none;
+    height: 100%;
   }
 
   .page-header__contacts {
@@ -1901,12 +1889,12 @@ button,
 
   .page-footer__logo {
     justify-self: center;
-    margin-right: 17px;
+    margin-right: 5px;
   }
 
   .page-footer__socials {
     justify-self: center;
-    margin: 26px 0 30px 4px;
+    margin: 23px 0 26px 4px;
   }
 
   .page-footer__nav {
@@ -1965,11 +1953,13 @@ button,
   }
 
   .advantages {
-    margin: 50px auto 48px auto;
+    margin: 50px auto 52px auto;
   }
 
   .advantages__list {
-    grid-template-columns: 1fr;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, 270px);
+    justify-content: center;
   }
 
   .advantages__item::before {
@@ -1978,7 +1968,7 @@ button,
   }
 
   .advantages__item {
-    min-height: 342px;
+    min-height: 340px;
     padding: 30px;
   }
 
@@ -2053,7 +2043,7 @@ button,
   }
 
   .content-section--form {
-    padding: 46px 0 87px;
+    padding: 46px 0 85px;
   }
 
   .content-section__body h2 {
@@ -2061,7 +2051,7 @@ button,
     line-height: 42px;
   }
 
-  .content-section__body p {
+  .content-section__body > p {
     font-size: 14px;
     line-height: 19px;
   }
@@ -2071,7 +2061,7 @@ button,
   }
 
   .content-section__form {
-    margin-top: 38px;
+    margin-top: 34px;
   }
 
   .content-section--modal {
@@ -2086,7 +2076,6 @@ button,
   }
 
   .nav__heading {
-    margin-top: 0;
     margin-bottom: 3px;
     padding-right: 80px;
   }

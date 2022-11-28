@@ -28,7 +28,7 @@ export default {
   contacts: [
     {
       id: 'mailto',
-      url: '#!',
+      url: 'mailto:info@sd.ru',
       text: 'info@sd.ru',
     },
     {
