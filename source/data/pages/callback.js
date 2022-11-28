@@ -11,6 +11,7 @@ export default {
     image: {
       default: 'img/paper-airplane.png',
       default2x: 'img/paper-airplane@2x.png',
+      immediately: true,
       webp: 'img/paper-airplane.webp',
       webp2x: 'img/paper-airplane@2x.webp',
     },

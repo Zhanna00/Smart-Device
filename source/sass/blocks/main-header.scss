@@ -83,6 +83,11 @@
     width: 1220px;
     height: none;
   }
+
+  @include vp-360 {
+    left: 0;
+    width: 100%;
+  }
 }
 
 .main-header__button {
